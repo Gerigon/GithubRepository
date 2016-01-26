@@ -3,6 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class MovePlayer : MonoBehaviour {
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	public bool facingRight = true;
 	public bool grounded = true;
