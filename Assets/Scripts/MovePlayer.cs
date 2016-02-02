@@ -3,14 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class MovePlayer : MonoBehaviour {
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 
 	public bool facingRight = true;
 	public bool grounded = true;
@@ -51,14 +43,17 @@ public class MovePlayer : MonoBehaviour {
 	void FixedUpdate()
 	{
 		Walk();
-		Jump();
+		//Jump();
 	}
 
 	void GetInput()
 	{
 		direction = Input.GetAxis("Horizontal");
-		if (Input.GetButtonDown("Jump") && grounded)
-			shouldJump = true;
+        if (Input.GetButtonDown("Jump") && grounded)
+        {
+            Jump();
+            //shouldJump = true;
+        }
 		if (Input.GetKeyDown(KeyCode.F))
 			Attack();
 		if(Input.GetKeyDown(KeyCode.Alpha1)) {
@@ -88,11 +83,11 @@ public class MovePlayer : MonoBehaviour {
 	}
 	void Jump()
 	{
-		if (shouldJump) {
+		//if (shouldJump) {
 
 			rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			shouldJump = false;
-		}
+		//}
 	}
 
 	void Die()
