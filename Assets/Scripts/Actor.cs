@@ -32,13 +32,8 @@ public class Actor : MonoBehaviour {
     {
         GroundCheck();
         myCharacterController.Move(direction);
-    }
-
-    void Walk()
-    {
-        //tell the animator to play animation, speed is 1 or -1;
+        //animator kan nog in andere class worden gezet mogt er veel meer functies bijkomen
         myAnimator.SetFloat("Speed", Mathf.Abs(direction));
-        myRigidBody.velocity = new Vector2(moveSpeed * direction, myRigidBody.velocity.y);
     }
     void GroundCheck()
     {
