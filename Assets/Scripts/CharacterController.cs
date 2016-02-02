@@ -34,7 +34,7 @@ public class CharacterController {
     {
         _owner.myRigidBody.velocity = new Vector2(_speed * direction, _owner.myRigidBody.velocity.y);
     }
-    void Jump()
+    public void Jump()
     {
         _owner.myRigidBody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
     }

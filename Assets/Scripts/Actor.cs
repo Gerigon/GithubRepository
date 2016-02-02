@@ -16,15 +16,19 @@ public class Actor : MonoBehaviour {
     public Rigidbody2D myRigidBody;
     public CharacterController myCharacterController;
     // Use this for initialization
-    void Start ()
+
+    protected virtual void Start()
     {
         myAnimator = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
         myCharacterController = new CharacterController(this);
+        /* not sure about this part, kan beter :P */
+        myCharacterController.speed = moveSpeed;
+        myCharacterController.jumpForce = jumpForce;
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	protected virtual void Update ()
     {
         GroundCheck();
         myCharacterController.Move(direction);
