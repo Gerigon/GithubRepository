@@ -32,11 +32,29 @@ public class Actor : MonoBehaviour {
     {
         GroundCheck();
         myCharacterController.Move(direction);
+        CheckDirection();
         //animator kan nog in andere class worden gezet mogt er veel meer functies bijkomen
         myAnimator.SetFloat("Speed", Mathf.Abs(direction));
     }
     void GroundCheck()
     {
         grounded = Physics2D.Linecast(transform.position, transform.position + Vector3.down, 1 << LayerMask.NameToLayer("Ground"));
+    }
+
+    void CheckDirection()
+    {
+        if (direction > 0 && !facingRight)
+            FlipSprite();
+        else if (direction < 0 && facingRight)
+            FlipSprite();
+    }
+
+    void FlipSprite()
+    {
+        facingRight = !facingRight;
+
+        Vector3 tmpScale = transform.localScale;
+        tmpScale.x *= -1;
+        transform.localScale = tmpScale;
     }
 }

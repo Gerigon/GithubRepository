@@ -26,19 +26,5 @@ public class Player : Actor {
             myCharacterController.Jump();
             //shouldJump = true;
         }
-        if (Input.GetKeyDown(KeyCode.F))
-            //Attack();
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            //currentWeaponNr = 1; SelectWeapon();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            //currentWeaponNr = 2; SelectWeapon();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            //currentWeaponNr = 3; SelectWeapon();
-        }
     }
 }
